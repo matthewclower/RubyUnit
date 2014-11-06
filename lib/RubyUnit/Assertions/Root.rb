@@ -42,6 +42,11 @@ module RubyUnit
         result
       end
 
+      def __reject_block error = '', message = nil, data = {} # :nodoc:
+        __assert_block error, message, data do
+          block_given? ? !yield : false
+        end
+      end
       ##
       # This is now a wrapper for __assert_block so it can be called 'nicely' in one line
       # * raises RubyUnit::AssertionFailure unless _value_ is true 
@@ -86,7 +91,9 @@ module RubyUnit
       #  __reject value, 'Failed to assert value is not true', message, {:value=>value}
       #
       def __reject value, error, message, data # :nodoc:
-        __assert !value, error, message, data
+        __reject_block error, message, data do
+          value
+        end
       end
     end
   end
