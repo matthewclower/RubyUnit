@@ -4,6 +4,7 @@ require_relative 'Assertions/Collections' # Collection assertions
 require_relative 'Assertions/Comparisons' # Comparison assertions
 require_relative 'Assertions/Exceptions'  # Exception assertions
 require_relative 'Assertions/Methods'     # Method assertions
+require_relative 'Assertions/Variables'   # Variable assertions
 
 module RubyUnit
   ##
@@ -34,5 +35,6 @@ module RubyUnit
     include Assertions::Comparisons
     include Assertions::Exceptions
     include Assertions::Methods
+    include Assertions::Variables
   end
 end
