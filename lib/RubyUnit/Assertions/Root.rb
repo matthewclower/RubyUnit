@@ -43,9 +43,10 @@ module RubyUnit
       end
 
       def __reject_block error = '', message = nil, data = {} # :nodoc:
-        __assert_block error, message, data do
-          block_given? ? !yield : false
-        end
+        Assertions.add_assertion
+        result = block_given? ? yield : false
+        __fail error, message, data if result
+        !result
       end
       ##
       # This is now a wrapper for __assert_block so it can be called 'nicely' in one line
