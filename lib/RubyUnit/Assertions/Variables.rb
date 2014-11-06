@@ -19,13 +19,13 @@ module RubyUnit
       end
 
       def assertInstanceVariableEqual expected, object, variable, message = nil
-        __assert_block ASSERT_INSTANCE_VARIABLE_VALUE_ERROR, message, {:expected=>expected, :object=>object, :variable=>variable} do
+        __assert_block ASSERT_INSTANCE_VARIABLE_EQUAL_ERROR, message, {:expected=>expected, :object=>object, :variable=>variable} do
           expected == __instance_variable(object, variable)
         end
       end
 
       def assertInstanceVariableNotEqual expected, object, variable, message = nil
-        __assert_block ASSERT_INSTANCE_VARIABLE_NOT_VALUE_ERROR, message, {:expected=>expected, :object=>object, :variable=>variable} do
+        __assert_block ASSERT_INSTANCE_VARIABLE_NOT_EQUAL_ERROR, message, {:expected=>expected, :object=>object, :variable=>variable} do
           expected != __instance_variable(object, variable)
         end
       end

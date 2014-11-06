@@ -67,5 +67,14 @@ module RubyUnit
     ASSERT_NOT_INSTANCE_METHOD_ERROR = 'Object does NOT define instance method'
     ASSERT_CLASS_METHOD_ERROR        = 'Object defines class method'
     ASSERT_NOT_CLASS_METHOD_ERROR    = 'Object does NOT define instance method'
+    
+    ##
+    # Variable assertions
+    ASSERT_INSTANCE_VARIABLE_DEFINED_ERROR     = 'Instance variable IS defined'
+    ASSERT_INSTANCE_VARIABLE_NOT_DEFINED_ERROR = 'Instance variable IS NOT defined'
+    ASSERT_INSTANCE_VARIABLE_EQUAL_ERROR       = 'Instance variable IS equal'
+    ASSERT_INSTANCE_VARIABLE_NOT_EQUAL_ERROR   = 'Instance variable IS NOT equal'
+    ASSERT_INSTANCE_VARIABLE_KIND_OF_ERROR     = 'Instance variable IS kind_of?'
+    ASSERT_INSTANCE_VARIABLE_NOT_KIND_OF_ERROR = 'Instance variable IS NOT kind_of?'
   end
 end
